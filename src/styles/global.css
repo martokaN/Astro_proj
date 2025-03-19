@@ -1,0 +1,8 @@
+/* tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2 {
+    @apply text-amber-900 text-9xl;
+}
