@@ -2,62 +2,97 @@
 
 ---
 
-<nav class="bg-gradient-to-r from-background to-specialbg shadow-lg">
+<nav class="bg-gradient-to-r from-background to-specialbg shadow-lg border-b border-border">
     <div class="relative flex justify-between items-center h-24">
         <a href="/" class="text-4xl text-heading hover:text-hover ml-10 font-">Pualani Creative</a>
 
-        <!-- Desktop menu -->
+        <!-- Desktop menu-->
         <div class="desktop-view mt-2">
-            <a href="/portfolio" class="link underline-anim">Portfolio</a>
-            <a href="/pricing" class="link underline-anim">Pricing</a>
-            <a href="/floral-arrangements" class="link underline-anim">Floral Arrangements</a>
-            <a href="/about" class="link underline-anim">About Me</a>
-            <a href="/booking" class="link button !mx-10">Book Your Session</a>
+            <ul class="flex space-x-2">
+                <li>
+                    <a href="/portfolio" class="link">Portfolio</a>
+                </li>
+                <li>
+                    <a href="/pricing" class="link">Pricing</a>
+                </li>
+                <li>
+                    <a href="/floral-arrangements" class="link">Floral Arrangements</a>
+                </li>
+                <li>
+                    <a href="/about" class="link">About Me</a>
+                </li>
+                <li>
+                    <a href="/booking" class="link button mx-10">Book Your Session</a>
+                </li>
+            </ul>
         </div>
         
         <!-- Mobile menu -->
         <div class="mobile-view svg flex">
-            <button id= "menuButton" class="p-2 rounded-lg hover:shadow-md transition-all">
+            <button id= "menuOpenButton" class="p-2 rounded-lg hover:shadow-md transition-all">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>
             </button>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 hidden">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>              
         </div>  
-    </div>
-
-    <hr class="border-t border-black w-full my-2">
-    <div class="flex flex-col justify-center items-end">
-        <a href="/portfolio" class="link underline-anim">Portfolio</a>
-        <a href="/pricing" class="link underline-anim">Pricing</a>
-        <a href="/floral-arrangements" class="link underline-anim">Floral Arrangements</a>
-        <a href="/about" class="link underline-anim">About Me</a>
-        <a href="/booking" class="link button">Book Your Session</a>
-        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden transition-opacity duration-300 ease-in-out"></div>
     </div>
 </nav>
 
+<div id="overlay" class="fixed inset-0 z-10 bg-black bg-opacity-50 hidden transition-opacity duration-1000 ease-in-out"></div>
+<div id="sideBar" class="h-full w-3/4 fixed top-0 right-0 bg-background z-20 translate-x-full transition-transform duration-500">
+    <div class="flex justify-end">
+        <button id= "menuCloseButton" class="p-2 m-2 rounded-lg hover:shadow-md transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+    <ul class="flex flex-col items-end space-y-6 mr-2">
+        <li>
+            <a href="/portfolio" class="link">Portfolio</a>
+        </li>
+        <li>
+            <a href="/pricing" class="link">Pricing</a>
+        </li>
+        <li>
+            <a href="/floral-arrangements" class="link">Floral Arrangements</a>
+        </li>
+        <li>
+            <a href="/about" class="link">About Me</a>
+        </li>
+        <li>
+            <a href="/booking" class="link button">Book Your Session</a>
+        </li>
+    </ul>
+</div>
+
 <script>
     const overlay = document.getElementById('overlay');
-    const menuButton = document.getElementById('menuButton');
+    const sideBar = document.getElementById('sideBar');
+    const menuOpenButton = document.getElementById('menuOpenButton');
+    const menuCloseButton = document.getElementById('menuCloseButton');
 
-    function menuButtonClicked() {
+    function openMenu() {
         overlay?.classList.remove('hidden');
+        sideBar?.classList.remove('translate-x-full');
     }
 
-    menuButton?.addEventListener('click', menuButtonClicked);
+    function closeMenu() {
+        overlay?.classList.add('hidden');
+        sideBar?.classList.add('translate-x-full');
+    }
+
+    menuOpenButton?.addEventListener('click', openMenu);
+    menuCloseButton?.addEventListener('click', closeMenu)
 </script>
 
 <style>
     .link {
-        @apply px-4 m-1 text-xl text-text hover:text-hover;
+        @apply px-2 text-xl text-text hover:text-hover transition-colors;
     }
 
     .underline-anim {
         @apply underline-offset-4 inline-block after:block after:h-[1px] after:w-0 after:bg-hover after:transition-all after:duration-300 hover:after:w-full w-fit;
-
     }
 
     .button {
@@ -74,13 +109,13 @@
 
     @media (max-width: 1149px) {
         .desktop-view {
-            display: none;
+            @apply hidden;
         }
     }
 
     @media (min-width: 1150px) {
         .mobile-view {
-            display: none;
+            @apply hidden;
         }
     }
 </style>

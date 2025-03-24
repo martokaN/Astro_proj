@@ -1,0 +1,91 @@
+---
+// Slideshow.astro
+---
+
+<div class="relative h-[calc(100vh-theme(spacing.navbar,64px))]">
+    <!-- Slideshow container -->
+    <div id="slideshow" class="w-full h-full overflow-hidden">
+      <!-- Slides with fixed background effect -->
+      <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
+        <div class="w-full h-full bg-[url('/images/slideshow/image1.jpg')] bg-center bg-no-repeat bg-cover"></div>
+      </div>
+      <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
+        <div class="w-full h-full bg-[url('/images/slideshow/image2.jpg')] bg-[50%_20%]	 bg-no-repeat bg-cover"></div>
+      </div>
+      <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
+        <div class="w-full h-full bg-[url('/images/slideshow/image3.jpg')] bg-center bg-no-repeat bg-cover"></div>
+      </div>
+    </div>
+  
+    <!-- Radio buttons for manual navigation -->
+    <div class="absolute bottom-12 left-0 right-0 flex justify-center gap-4 z-10">
+      <label class="cursor-pointer">
+        <input type="radio" name="slide" class="sr-only peer" checked />
+        <span class="block w-4 h-4 rounded-full bg-white/50 peer-checked:bg-white"></span>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="slide" class="sr-only peer" />
+        <span class="block w-4 h-4 rounded-full bg-white/50 peer-checked:bg-white"></span>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="slide" class="sr-only peer" />
+        <span class="block w-4 h-4 rounded-full bg-white/50 peer-checked:bg-white"></span>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="slide" class="sr-only peer" />
+        <span class="block w-4 h-4 rounded-full bg-white/50 peer-checked:bg-white"></span>
+      </label>
+    </div>
+  </div>
+  
+  <script>
+  // Client-side JavaScript for slideshow functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    let currentSlide = 0;
+    let slideInterval: number;
+  
+    // Show initial slide
+    showSlide(0);
+  
+    // Function to show a specific slide
+    function showSlide(index: number) {
+      // Hide all slides
+      slides.forEach((slide) => {
+        (slide as HTMLElement).style.opacity = '0';
+        (slide as HTMLElement).style.zIndex = '0';
+      });
+      
+      // Show the selected slide
+      (slides[index] as HTMLElement).style.opacity = '1';
+      (slides[index] as HTMLElement).style.zIndex = '1';
+      
+      // Update radio button
+      radioButtons[index].checked = true;
+      
+      // Update current slide index
+      currentSlide = index;
+    }
+  
+    // Auto-advance slides
+    function startSlideshow() {
+      slideInterval = setInterval(() => {
+        const nextSlide = (currentSlide + 1) % slides.length;
+        showSlide(nextSlide);
+      }, 5000); // Change slide every 5 seconds
+    }
+  
+    // Start automatic slideshow
+    startSlideshow();
+  
+    // Add click event to radio buttons for manual navigation
+    radioButtons.forEach((radio, index) => {
+      radio.addEventListener('change', () => {
+        clearInterval(slideInterval); // Stop auto-slideshow when manually changed
+        showSlide(index);
+        startSlideshow(); // Restart auto-slideshow
+      });
+    });
+  });
+  </script>

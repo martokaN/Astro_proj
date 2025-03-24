@@ -13,7 +13,10 @@ module.exports = {
         buttontext: '#FFFFFF',
         border: '#4B3001',
       },
+      spacing: {
+        navbar: '96px',
+      },
     },
   },
   plugins: [],
-}
+};
