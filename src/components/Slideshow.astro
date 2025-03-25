@@ -1,5 +1,5 @@
 ---
-// Slideshow.astro
+import { Image } from 'astro:assets';
 ---
 
 <div class="relative h-[calc(100vh-theme(spacing.navbar,64px))]">
@@ -7,7 +7,9 @@
     <div id="slideshow" class="w-full h-full overflow-hidden">
       <!-- Slides with fixed background effect -->
       <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
-        <div class="w-full h-full bg-[url('/images/slideshow/image1.jpg')] bg-center bg-no-repeat bg-cover"></div>
+        <!-- <div class="w-full h-full bg-[url('/images/slideshow/image1.jpg')] bg-center bg-no-repeat bg-cover"></div> -->
+        <Image src="/images/slideshow/image1.jpg" alt="Idk" width="1920" height="1080" class="absolute inset-0 w-full h-full object-cover" />
+        <div ></div>
       </div>
       <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
         <div class="w-full h-full bg-[url('/images/slideshow/image2.jpg')] bg-[50%_20%]	 bg-no-repeat bg-cover"></div>
@@ -18,7 +20,7 @@
     </div>
   
     <!-- Radio buttons for manual navigation -->
-    <div class="absolute bottom-12 left-0 right-0 flex justify-center gap-4 z-10">
+    <div class="absolute bottom-8 left-0 right-0 flex justify-center gap-4 z-10">
       <label class="cursor-pointer">
         <input type="radio" name="slide" class="sr-only peer" checked />
         <span class="block w-4 h-4 rounded-full bg-white/50 peer-checked:bg-white"></span>
@@ -62,7 +64,7 @@
       (slides[index] as HTMLElement).style.zIndex = '1';
       
       // Update radio button
-      radioButtons[index].checked = true;
+      (radioButtons[index] as HTMLInputElement).checked = true;
       
       // Update current slide index
       currentSlide = index;

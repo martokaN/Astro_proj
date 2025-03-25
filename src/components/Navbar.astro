@@ -13,7 +13,12 @@
                     <a href="/portfolio" class="link">Portfolio</a>
                 </li>
                 <li>
-                    <a href="/pricing" class="link">Pricing</a>
+                    <a href="/pricing" class="link group flex items-center">
+                        <span class="group-hover:text-hover transition-colors">Pricing</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 group-hover:text-hover transition-colors">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>                          
+                    </a>
                 </li>
                 <li>
                     <a href="/floral-arrangements" class="link">Floral Arrangements</a>
@@ -29,7 +34,7 @@
         
         <!-- Mobile menu -->
         <div class="mobile-view svg flex">
-            <button id= "menuOpenButton" class="p-2 rounded-lg hover:shadow-md transition-all">
+            <button id= "menuOpenButton" class="p-2 mr-10 rounded-lg hover:shadow-md transition-all">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>
@@ -39,15 +44,15 @@
 </nav>
 
 <div id="overlay" class="fixed inset-0 z-10 bg-black bg-opacity-50 hidden transition-opacity duration-1000 ease-in-out"></div>
-<div id="sideBar" class="h-full w-3/4 fixed top-0 right-0 bg-background z-20 translate-x-full transition-transform duration-500">
+<nav id="sideBar" class="h-full w-3/4 fixed top-0 right-0 bg-background z-20 translate-x-full transition-transform duration-500">
     <div class="flex justify-end">
-        <button id= "menuCloseButton" class="p-2 m-2 rounded-lg hover:shadow-md transition-all">
+        <button id= "menuCloseButton" class="p-2 m-2 rounded-lg hover:shadow-md transition-all svg">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
-    <ul class="flex flex-col items-end space-y-6 mr-2">
+    <ul class="text-right space-y-6 mr-2">
         <li>
             <a href="/portfolio" class="link">Portfolio</a>
         </li>
@@ -64,7 +69,7 @@
             <a href="/booking" class="link button">Book Your Session</a>
         </li>
     </ul>
-</div>
+</nav>
 
 <script>
     const overlay = document.getElementById('overlay');
@@ -96,15 +101,11 @@
     }
 
     .button {
-        @apply p-2 border rounded-xl bg-button text-buttontext border-border hover:no-underline hover:text-buttontext hover:bg-hover transition-colors;
+        @apply p-2 border rounded-3xl bg-button text-buttontext border-border hover:no-underline hover:text-buttontext hover:bg-hover transition-colors;
     }
 
     .svg {
-        @apply mx-10 text-text hover:text-hover;
-    }
-
-    .link-column {
-        @apply my-1;
+        @apply text-text hover:text-hover;
     }
 
     @media (max-width: 1149px) {
