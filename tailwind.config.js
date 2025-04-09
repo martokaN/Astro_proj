@@ -3,6 +3,13 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      fontSize: {
+        'fluid-logo': 'clamp(2.1rem, 3vw, 4rem)',
+      },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+        logo: ['Playball', 'serif'],
+      },
       colors: {
         button: '#DFB67D',
         hover: '#CA9862',
@@ -14,7 +21,7 @@ module.exports = {
         border: '#4B3001',
       },
       spacing: {
-        navbar: '96px',
+        navbar: '6rem',
       },
     },
   },

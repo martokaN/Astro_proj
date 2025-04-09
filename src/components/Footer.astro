@@ -1,39 +1,31 @@
 ---
+import '../styles/global.css';
 
+const year = new Date().getFullYear();
 ---
 
-<footer class="bg-gradient-to-l from-background to-specialbg shadow-lg pt-6">
-    <ul class="flex justify-evenly items-center space-x-2">
-        <li class="">
-            <a href="/"><img src="/images/logo.png" alt="Logo" class="w-16 h-16 rounded-xl mx-20"></a>
-        </li>
-        <li>
-            <a href="/portfolio" class="link">Portfolio</a>
-        </li>
-        <li>
-            <a href="/pricing" class="link">Pricing</a>
-        </li>
-        <li>
-            <a href="/floral-arrangements" class="link">Floral Arrangements</a>
-        </li>
-        <li>
-            <a href="/about" class="link">About Me</a>
-        </li>
-        <li>
-            <a href="/booking" class="link button mx-10">Book Your Session</a>
-        </li>
-    </ul>
-    <div class="flex justify-center h-8 mt-6 bg-white border-t-2 border-border">
-        <p>&copy All rights reserved. Pualani Creative</p>
+<footer class="bg-gradient-to-l from-background to-specialbg relative">
+    <div class="flex justify-center items-center h-16 w-full">
+        <a href="https://www.instagram.com/pualani_creative/">
+            <svg class="size-8 text-text hover:text-hover transition-colors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+            </svg>         
+    
+        </a>
     </div>
+
+    <!-- Scroll to Top Arrow (positioned in the bottom left of footer) -->
+    <button 
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="absolute bottom-2 right-6 text-text p-3 rounded-full shadow-md transition-all duration-300"
+        aria-label="Scroll to top"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
 </footer>
 
-<style>
-    .link {
-        @apply px-2 text-xl text-text hover:text-hover transition-colors;
-    }
-
-    .button {
-        @apply p-2 border rounded-xl bg-button text-buttontext border-border hover:no-underline hover:text-buttontext hover:bg-hover transition-colors;
-    }
-</style>
+<div class="flex justify-center items-center h-8 bg-white border-t border-border">
+    <p>&copy; {year} Pualani Creative. All rights reserved.</p>
+</div>

@@ -1,52 +1,25 @@
 ---
-
+import '../styles/global.css';
 ---
 
-<nav class="bg-gradient-to-r from-background to-specialbg shadow-xl border-b border-border">
+<nav class="w-full fixed top-0 bg-gradient-to-r from-background/80 to-specialbg/80 backdrop-blur-md shadow-md z-30">
     <div class="relative flex justify-between items-center h-24">
-        <a href="/" class="text-[clamp(1rem,5vw,2rem)] text-heading hover:text-hover ml-10 font-">Pualani Creative</a>
+        <a href="/" class="text-fluid-logo font-logo text-heading hover:text-hover ml-10">Pualani Creative</a>
 
         <!-- Desktop menu-->
-        <div class="desktop-view mt-2">
-            <ul class="flex space-x-2">
-                <li>
-                    <a href="/portfolio" class="link">Portfolio</a>
-                </li>
-                <li class="relative group">
-                    <a href="/pricing" class="link flex items-center">
-                        <span>Pricing</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </a>
-                    <div class="absolute z-10 ml-2 hidden group-hover:block">
-                        <ul class="bg-specialbg w-48 h-64 rounded-md border border-border flex flex-col justify-evenly items-center">
-                            <li><a href="/pricing/30-minute" class="sub-link">30 Minute</a></li>
-                            <li><a href="/pricing/45-minute" class="sub-link">45 Minute</a></li>
-                            <li><a href="/pricing/60-minute" class="sub-link">60 Minute</a></li>
-                            <li><a href="/pricing/90-minute" class="sub-link">90 Minute</a></li>
-                            <li><a href="/pricing/120-minute" class="sub-link">120 Minute</a></li>
-                            <li><a href="/pricing/proposal" class="sub-link">Proposal</a></li>
-                            <li><a href="/pricing/elopement" class="sub-link">Elopement</a></li>
-                            <li><a href="/pricing/wedding" class="sub-link">Wedding</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="/floral-arrangements" class="link">Floral Arrangements</a>
-                </li>
-                <li>
-                    <a href="/about" class="link">About Me</a>
-                </li>
-                <li>
-                    <a href="/booking" class="link button mx-10">Book Your Session</a>
-                </li>
+        <div class="hidden lg:block mt-2">
+            <ul class="flex space-x-2 items-center">
+                <li><a href="/portfolio" class="link">Portfolio</a></li>
+                <li><a href="/pricing" class="link">Pricing</a></li>
+                <li><a href="/floral-arrangements" class="link">Floral Arrangements</a></li>
+                <li><a href="/about" class="link">About Me</a></li>
+                <li><button class="button mx-10"><a href="/booking">Book You Session</a></button></li>
             </ul>
         </div>
         
         <!-- Mobile menu -->
-        <div class="mobile-view svg flex">
-            <button id= "menuOpenButton" class="p-2 mr-10 rounded-lg hover:shadow-md transition-all">
+        <div class="lg:hidden svg flex">
+            <button id= "menuOpenButton" class="p-2 mr-10 rounded-lg shadow-md transition-all">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>
@@ -55,33 +28,25 @@
     </div>
 </nav>
 
-<div id="overlay" class="fixed inset-0 z-10 bg-black bg-opacity-50 hidden transition-opacity duration-1000 ease-in-out"></div>
-<nav id="sideBar" class="h-full w-3/4 fixed top-0 right-0 bg-background z-20 translate-x-full transition-transform duration-500">
+<div id="overlay" class="fixed inset-0 z-40 bg-black bg-opacity-50 hidden transition-opacity duration-1000 ease-in-out"></div>
+<nav id="sideBar" class="h-full w-3/4 fixed top-0 right-0 bg-background z-50 translate-x-full transition-transform duration-500">
     <div class="flex justify-end">
-        <button id= "menuCloseButton" class="p-2 m-2 rounded-lg hover:shadow-md transition-all svg">
+        <button id= "menuCloseButton" class="p-2 m-2 rounded-lg shadow-md transition-all svg">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
     <ul class="text-right space-y-6 mr-2">
-        <li>
-            <a href="/portfolio" class="link">Portfolio</a>
-        </li>
-        <li>
-            <a href="/pricing" class="link">Pricing</a>
-        </li>
-        <li>
-            <a href="/floral-arrangements" class="link">Floral Arrangements</a>
-        </li>
-        <li>
-            <a href="/about" class="link">About Me</a>
-        </li>
-        <li>
-            <a href="/booking" class="link button">Book Your Session</a>
-        </li>
+        <li><a href="/portfolio" class="link">Portfolio</a></li>
+        <li><a href="/portfolio" class="link">Pricing</a></li>
+        <li><a href="/floral-arrangements" class="link">Floral Arrangements</a></li>
+        <li><a href="/about" class="link">About Me</a></li>
+        <li><a href="/booking" class="link button">Book Your Session</a></li>
     </ul>
 </nav>
+
+<div class="pb-24"></div>
 
 <script>
     const overlay = document.getElementById('overlay');
@@ -102,37 +67,3 @@
     menuOpenButton?.addEventListener('click', openMenu);
     menuCloseButton?.addEventListener('click', closeMenu)
 </script>
-
-<style>
-    .link {
-        @apply px-2 text-xl text-text hover:text-hover transition-colors;
-    }
-
-    .sub-link {
-        @apply px-2 text-base text-text hover:text-hover transition-colors;
-    }
-
-    .underline-anim {
-        @apply underline-offset-4 inline-block after:block after:h-[1px] after:w-0 after:bg-hover after:transition-all after:duration-300 hover:after:w-full w-fit;
-    }
-
-    .button {
-        @apply p-2 border rounded-3xl bg-button text-buttontext border-border hover:no-underline hover:text-buttontext hover:bg-hover transition-colors;
-    }
-
-    .svg {
-        @apply text-text hover:text-hover;
-    }
-
-    @media (max-width: 1149px) {
-        .desktop-view {
-            @apply hidden;
-        }
-    }
-
-    @media (min-width: 1150px) {
-        .mobile-view {
-            @apply hidden;
-        }
-    }
-</style>
