@@ -1,5 +1,15 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import DynText from '../comp_test/DynText.astro';
+import Container from '../layouts/Container.astro';
 ---
 
-<p>prdel</p>
+<Layout>
+	<Navbar />
+    <Container>
+        <DynText />
+    </Container>
+	<Footer />
+</Layout>

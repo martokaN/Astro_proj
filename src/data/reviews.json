@@ -1,0 +1,126 @@
+{
+    "result": {
+        "reviews": [
+            {
+                "author_name": "Anna Thompson",
+                "author_url": "https://www.google.com/maps/contrib/1000000001/",
+                "language": "en",
+                "profile_photo_url": "https://example.com/photo1.jpg",
+                "rating": 5,
+                "relative_time_description": "2 days ago",
+                "text": "Absolutely loved this place. Staff was super friendly and the vibe was perfect!",
+                "time": 1681603200,
+                "original_language": "en",
+                "translated": false
+            },
+            {
+                "author_name": "Carlos Mendez",
+                "author_url": "https://www.google.com/maps/contrib/1000000002/",
+                "language": "es",
+                "profile_photo_url": "https://example.com/photo2.jpg",
+                "rating": 4,
+                "relative_time_description": "1 week ago",
+                "text": "Muy buen servicio, aunque la comida podría ser mejor.",
+                "time": 1681008400,
+                "original_language": "es",
+                "translated": false
+            },
+            {
+                "author_name": "Linda Wei",
+                "author_url": "https://www.google.com/maps/contrib/1000000003/",
+                "language": "en",
+                "profile_photo_url": "https://example.com/photo3.jpg",
+                "rating": 3,
+                "relative_time_description": "3 weeks ago",
+                "text": "Nice ambiance, but a bit overpriced for what you get.",
+                "time": 1679404800,
+                "original_language": "en",
+                "translated": false
+            },
+            {
+                "author_name": "Mohamed Ali",
+                "author_url": "https://www.google.com/maps/contrib/1000000004/",
+                "language": "ar",
+                "profile_photo_url": "https://example.com/photo4.jpg",
+                "rating": 5,
+                "relative_time_description": "a month ago",
+                "text": "مكان رائع وخدمة ممتازة. أنصح به بشدة!",
+                "time": 1678720000,
+                "original_language": "ar",
+                "translated": false
+            },
+            {
+                "author_name": "Emily Chen",
+                "author_url": "https://www.google.com/maps/contrib/1000000005/",
+                "language": "en",
+                "profile_photo_url": "https://example.com/photo5.jpg",
+                "rating": 4,
+                "relative_time_description": "2 months ago",
+                "text": "Very clean and the staff was helpful. Coffee was average though.",
+                "time": 1676000000,
+                "original_language": "en",
+                "translated": false
+            },
+            {
+                "author_name": "Tomáš Novák",
+                "author_url": "https://www.google.com/maps/contrib/1000000006/",
+                "language": "cs",
+                "profile_photo_url": "https://example.com/photo6.jpg",
+                "rating": 5,
+                "relative_time_description": "3 months ago",
+                "text": "Skvělé místo! Určitě se sem vrátím.",
+                "time": 1673318400,
+                "original_language": "cs",
+                "translated": false
+            },
+            {
+                "author_name": "Julia Rossi",
+                "author_url": "https://www.google.com/maps/contrib/1000000007/",
+                "language": "it",
+                "profile_photo_url": "https://example.com/photo7.jpg",
+                "rating": 2,
+                "relative_time_description": "4 months ago",
+                "text": "Servizio lento e personale poco cordiale.",
+                "time": 1670716800,
+                "original_language": "it",
+                "translated": false
+            },
+            {
+                "author_name": "Nathan Brown",
+                "author_url": "https://www.google.com/maps/contrib/1000000008/",
+                "language": "en",
+                "profile_photo_url": "https://example.com/photo8.jpg",
+                "rating": 1,
+                "relative_time_description": "5 months ago",
+                "text": "Had a terrible experience. Would not recommend.",
+                "time": 1668115200,
+                "original_language": "en",
+                "translated": false
+            },
+            {
+                "author_name": "Sophie Dubois",
+                "author_url": "https://www.google.com/maps/contrib/1000000009/",
+                "language": "fr",
+                "profile_photo_url": "https://example.com/photo9.jpg",
+                "rating": 4,
+                "relative_time_description": "6 months ago",
+                "text": "Endroit charmant avec une belle décoration. Bon service.",
+                "time": 1665513600,
+                "original_language": "fr",
+                "translated": false
+            },
+            {
+                "author_name": "Kenji Tanaka",
+                "author_url": "https://www.google.com/maps/contrib/1000000010/",
+                "language": "ja",
+                "profile_photo_url": "https://example.com/photo10.jpg",
+                "rating": 5,
+                "relative_time_description": "7 months ago",
+                "text": "とても素敵な場所でした。また来たいです！",
+                "time": 1662912000,
+                "original_language": "ja",
+                "translated": false
+            }
+        ]
+    }
+}

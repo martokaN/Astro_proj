@@ -1,0 +1,66 @@
+---
+import Footer from "../components/Footer.astro";
+import PriceMenu from "../comp_test/PriceMenu.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
+
+const plans = [
+  {
+    name: '30 minut',
+    price: '€80',
+    info: 'Short & sweet session — perfect for portraits or quick shoots. Includes 10 edited photos.',
+    photos: ['/photos/30min1.jpg', '/photos/30min2.jpg'],
+  },
+  {
+    name: '45 minut',
+    price: '€100',
+    info: 'A bit more time for more variety. Includes 15 edited photos.',
+    photos: ['/photos/45min1.jpg', '/photos/45min2.jpg'],
+  },
+  {
+    name: '60 minut',
+    price: '€130',
+    info: 'Perfect for couples or small families. Includes 20 edited photos.',
+    photos: ['/photos/60min1.jpg', '/photos/60min2.jpg'],
+  },
+  {
+    name: '90 minut',
+    price: '€180',
+    info: 'More time, more locations, more photos. Great for storytelling. Includes 30 edited photos.',
+    photos: ['/photos/90min1.jpg', '/photos/90min2.jpg'],
+  },
+  {
+    name: '120 minut',
+    price: '€230',
+    info: 'Best for longer sessions, outfit changes, or special moments. Includes 40 edited photos.',
+    photos: ['/photos/120min1.jpg', '/photos/120min2.jpg'],
+  },
+  {
+    name: 'Proposal',
+    price: '€250',
+    info: 'Captured discreetly and beautifully. Includes 30+ edited photos and optional location planning.',
+    photos: ['/photos/proposal1.jpg', '/photos/proposal2.jpg'],
+  },
+  {
+    name: 'Elopement',
+    price: '€600',
+    info: 'A small intimate wedding — full coverage of vows, moments & portraits. Includes 100+ photos.',
+    photos: ['/photos/elopement1.jpg', '/photos/elopement2.jpg'],
+  },
+  {
+    name: 'Wedding',
+    price: '€1200',
+    info: 'Full-day coverage (prep to party), storytelling, and documentary style. Includes 300+ photos.',
+    photos: ['/photos/wedding1.jpg', '/photos/wedding2.jpg'],
+  },
+];
+---
+
+<Layout>
+    <Navbar />
+    <Container>
+        <PriceMenu {plans} />
+    </Container>
+    <Footer />
+</Layout>

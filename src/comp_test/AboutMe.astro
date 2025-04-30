@@ -1,0 +1,31 @@
+---
+// src/components/About.astro
+import { Image } from 'astro:assets';
+import profileImage from '../assets/slideshow/image1.jpg';
+---
+
+<div class="bg-white ring-3 ring-text rounded-2xl shadow-md p-8 my-10 mx-auto flex flex-col md:flex-row items-center gap-8">
+  <!-- Image -->
+  <Image
+    src={profileImage}
+    alt="Photographer portrait"
+    width={600}
+    height={600}
+    format="webp"
+    class="w-full md:w-1/3 h-64 object-cover rounded-xl"
+  />
+
+  <!-- Text -->
+  <div class="flex-1 text-center md:text-left">
+    <h2 class="text-3xl font-bold mb-4">Hi, I'm [Your Name]</h2>
+    <p class="text-gray-700 leading-relaxed">
+      I'm a lifestyle and portrait photographer who specializes in capturing authentic moments that feel like you. I work mostly with couples, families, and individuals who want their stories told naturally and beautifully.
+    </p>
+    <p class="text-gray-700 mt-4 leading-relaxed">
+      Based in [Your City], I photograph both locally and beyond. Whether you're planning an intimate elopement, a cozy family shoot, or a surprise proposal, I’m here to make the experience easy, relaxed, and memorable.
+    </p>
+    <p class="text-gray-700 mt-4 leading-relaxed">
+      My goal is to make you feel comfortable in front of the camera and deliver timeless images you'll cherish for years to come.
+    </p>
+  </div>
+</div>

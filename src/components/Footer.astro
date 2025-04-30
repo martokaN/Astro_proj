@@ -4,7 +4,7 @@ import '../styles/global.css';
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-gradient-to-l from-background to-specialbg relative">
+<footer class="bg-gradient-to-l from-background to-specialbg shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_-2px_4px_-2px_rgba(0,0,0,0.1)] relative">
     <div class="flex justify-center items-center h-16 w-full">
         <a href="https://www.instagram.com/pualani_creative/">
             <svg class="size-8 text-text hover:text-hover transition-colors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -17,7 +17,7 @@ const year = new Date().getFullYear();
     <!-- Scroll to Top Arrow (positioned in the bottom left of footer) -->
     <button 
         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-        class="absolute bottom-2 right-6 text-text p-3 rounded-full shadow-md transition-all duration-300"
+        class="absolute bottom-2 right-6 text-black/80 hover:text-black/40 hover:scale-105 p-3 rounded-full shadow-md transition-all duration-300"
         aria-label="Scroll to top"
     >
         <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
