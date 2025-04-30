@@ -6,7 +6,7 @@ export const GET: APIRoute = async () => {
 
   try {
     const reviewsResponse = await fetch(
-      `https://places.googleapis.com/v1/places/ChIJ5w24VAbYcWURW4H1mhxBAqQ?fields=reviews&key=AIzaSyCJeMDQrh4tOkH6n6b7PZS15NRZLO85cIA`
+      `https://places.googleapis.com/v1/places/ChIJ5w24VAbYcWURW4H1mhxBAqQ?fields=reviews&key=`
     );
 
     if (!reviewsResponse.ok) {
